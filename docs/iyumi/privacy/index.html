@@ -1,0 +1,154 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<meta name="robots" content="index, follow" />
+<title>이유미(iyumi) 개인정보처리방침</title>
+<style>
+  :root { --fg:#1f2328; --muted:#57606a; --accent:#F2913D; --line:#e6e8eb; --bg:#ffffff; }
+  * { box-sizing: border-box; }
+  body { margin:0; background:var(--bg); color:var(--fg);
+    font-family:-apple-system,BlinkMacSystemFont,"Segoe UI","Apple SD Gothic Neo","Malgun Gothic",sans-serif;
+    line-height:1.7; }
+  .wrap { max-width:760px; margin:0 auto; padding:48px 20px 96px; }
+  h1 { font-size:1.9rem; margin:0 0 4px; }
+  h2 { font-size:1.25rem; margin:40px 0 12px; padding-top:16px; border-top:1px solid var(--line); }
+  h3 { font-size:1.05rem; margin:24px 0 8px; }
+  .meta { color:var(--muted); font-size:.92rem; margin-bottom:8px; }
+  .note { background:#fff6ec; border:1px solid #f6d9b8; border-radius:10px; padding:14px 16px; font-size:.92rem; color:#7a4a16; margin:16px 0 28px; }
+  table { width:100%; border-collapse:collapse; margin:12px 0; font-size:.92rem; }
+  th, td { border:1px solid var(--line); padding:8px 10px; text-align:left; vertical-align:top; }
+  th { background:#f6f8fa; }
+  code { background:#f6f8fa; padding:1px 5px; border-radius:5px; font-size:.85em; }
+  ul { padding-left:20px; }
+  footer { color:var(--muted); font-size:.85rem; margin-top:48px; border-top:1px solid var(--line); padding-top:16px; }
+  footer a { color:var(--accent); }
+</style>
+</head>
+<body>
+<div class="wrap">
+  <h1>이유미(iyumi) 개인정보처리방침</h1>
+  <p class="meta">시행일자: 2026-06-15 · 앱 버전 0.11.2</p>
+
+  <div class="note">
+    이유미는 <strong>로컬 우선(local-first)</strong> 방식으로 설계되어, 대부분의 이용자 데이터(아기 정보, 섭취·알레르기 기록, 사진)는
+    <strong>기본적으로 이용자 기기에만 저장</strong>되며 회사 서버로 자동 전송되지 않습니다.
+  </div>
+
+  <p>이유미(이하 "회사" 또는 "서비스")는 「개인정보 보호법」 등 관련 법령을 준수하며, 본 방침을 통해 앱이 어떤 정보를 수집·이용·보관·보호하는지 안내합니다. 앱은 <strong>로그인 없이 게스트 모드로 핵심 기능을 모두 사용</strong>할 수 있습니다.</p>
+
+  <h2>1. 수집하는 개인정보 항목 및 수집 방법</h2>
+
+  <h3>1-1. 이용자가 직접 입력·저장하는 정보 (원칙적으로 기기 내 로컬 저장)</h3>
+  <table>
+    <tr><th>구분</th><th>항목</th><th>저장 위치</th></tr>
+    <tr><td>아기 프로필</td><td>애칭, 생년월일, 수유 유형(모유/분유/혼합), 알레르기 가족력 여부, 프로필 사진</td><td>기기 로컬</td></tr>
+    <tr><td>섭취 기록</td><td>재료, 날짜, 섭취량, 반응, 자유 메모, 기록 사진</td><td>기기 로컬</td></tr>
+    <tr><td>알레르기·반응 기록(민감정보)</td><td>재료, 증상, 중증도, 발생 시각, 입력 증상·메모</td><td>기기 로컬</td></tr>
+    <tr><td>큐브/레시피</td><td>큐브 재고, 맞춤·저장·최근 레시피</td><td>기기 로컬</td></tr>
+  </table>
+  <p>위 정보는 회사 서버로 자동 전송되지 않습니다. 다만 (a) AI 코치, (b) 클라우드 동기화(선택), (c) 분석, (d) 내보내기 이용 시 일부 정보가 외부로 전송될 수 있습니다.</p>
+
+  <h3>1-2. 회원(로그인) 정보 — 선택</h3>
+  <p>카카오 또는 Apple 계정으로 로그인을 선택한 경우에만 처리됩니다.</p>
+  <ul>
+    <li>인증 식별자(소셜 제공자 발급 user_id)</li>
+    <li>표시 이름(프로필 이름 — 화면 표시용)</li>
+    <li>이메일(세션에 포함될 수 있으나 앱이 별도 저장·이용하지 않음)</li>
+  </ul>
+  <p>OAuth 방식으로 처리되며 회사는 소셜 계정 비밀번호를 수집하지 않습니다.</p>
+
+  <h3>1-3. AI 코치 이용 시 전송되는 정보</h3>
+  <p>AI 코치 사용 시 답변 생성을 위해 회사 보안 서버(Supabase Edge Function)를 거쳐 AI 모델 제공자인 <strong>Anthropic PBC(Claude)</strong>에게 다음이 전송됩니다.</p>
+  <ul>
+    <li>아기 애칭, 월령, 이유식 단계, 수유 유형, 알레르기 가족력 여부</li>
+    <li>최근 섭취 기록(재료·날짜·반응·섭취량·메모)</li>
+    <li>최근 알레르기·반응 기록(재료·증상·중증도·날짜)</li>
+    <li>이용자가 입력한 대화 메시지</li>
+    <li>익명 기기 식별자(quota 관리용, 실명/연락처 아님)</li>
+  </ul>
+  <p>AI 코치 답변은 참고용이며 의학적 진단·처방이 아닙니다.</p>
+
+  <h3>1-4. 자동 수집 정보(분석)</h3>
+  <p>Firebase Analytics(GA4) 설정 시 서비스 개선을 위해 수집됩니다.</p>
+  <ul>
+    <li>사용자 속성: 아기 월령, 이유식 단계, 누적 도입 재료 수, 구독 상태</li>
+    <li>이벤트: 화면 조회, 온보딩 완료, 재료 조회/도입, 알레르기 기록, 레시피 시작/완료, 검색어, 큐브, AI 코치, 로그인 방법, 내보내기 등</li>
+    <li>Firebase 자동 수집 식별자(앱 인스턴스 ID 등)</li>
+  </ul>
+  <p>분석 이벤트에는 아기 실명·생년월일·사진·이메일이 포함되지 않습니다.</p>
+
+  <h3>1-5. 기기 권한</h3>
+  <table>
+    <tr><th>권한</th><th>용도</th></tr>
+    <tr><td>카메라 / 사진</td><td>아기·기록 사진 촬영·선택</td></tr>
+    <tr><td>마이크 / 음성 인식</td><td>조리 중 핸즈프리 음성 명령</td></tr>
+    <tr><td>알림</td><td>관찰 리마인더·조리 타이머(로컬 알림)</td></tr>
+  </table>
+  <p>음성 인식은 기기 OS(Apple/Google)의 기능을 사용하며, 인식된 명령어는 앱이 저장·전송하지 않습니다.</p>
+
+  <h2>2. 개인정보의 이용 목적</h2>
+  <ul>
+    <li>이유식 기록·관리 및 맞춤 가이드 제공</li>
+    <li>아기 월령·단계 기반 재료/레시피 추천</li>
+    <li>AI 코치 답변 생성(이용 시)</li>
+    <li>회원 식별 및 (선택 시) 기기 간 동기화</li>
+    <li>이용 통계 분석 및 품질 개선</li>
+    <li>알림(리마인더·타이머) 제공</li>
+  </ul>
+
+  <h2>3. 보관 및 파기</h2>
+  <ul>
+    <li>로컬 데이터: 앱 삭제 또는 앱 내 데이터 삭제 시 함께 삭제</li>
+    <li>클라우드 동기화 데이터: 회원 탈퇴/삭제 요청 시 지체 없이 파기</li>
+    <li>AI 코치 전송 데이터: 답변 생성 목적으로만 처리하며, AI 제공자(Anthropic)의 상업용 약관상 입력·출력은 모델 학습에 사용되지 않음. 보관·파기는 각 사업자 정책에 따름</li>
+    <li>분석 데이터: Firebase/Google 보관 정책에 따름</li>
+  </ul>
+
+  <h2>4. 제3자 제공 및 처리위탁</h2>
+  <p>회사는 개인정보를 판매하지 않으며, 서비스 제공을 위해 아래 사업자를 이용(처리위탁)합니다.</p>
+  <table>
+    <tr><th>수탁자/제공처</th><th>항목</th><th>목적</th></tr>
+    <tr><td>Supabase Inc.</td><td>인증 정보, (동기화 시) 아기 프로필·큐브 설정, AI 전송 데이터</td><td>인증·백엔드·함수 호스팅</td></tr>
+    <tr><td>Google LLC (Firebase/GA4)</td><td>이용 통계, 앱 인스턴스 식별자, 아기 월령·단계</td><td>이용 분석</td></tr>
+    <tr><td>Anthropic PBC (Claude)</td><td>AI 코치 전송 데이터</td><td>AI 답변 생성 (미국 소재)</td></tr>
+    <tr><td>카카오 / Apple</td><td>소셜 로그인 인증</td><td>로그인(선택 시)</td></tr>
+  </table>
+  <p>위 사업자(Supabase·Google·Anthropic 등)의 서버는 국외(주로 미국)에 위치할 수 있으며, 해당 기능 이용 시점에 네트워크를 통한 국외 이전이 발생할 수 있습니다.</p>
+
+  <h2>5. 이용자의 권리</h2>
+  <ul>
+    <li>개인정보 열람·정정·삭제·처리정지 요청</li>
+    <li>동의 철회 및 회원 탈퇴 — <a href="../account-deletion/">계정·데이터 삭제 안내</a></li>
+    <li>로컬 데이터는 앱 내 삭제 또는 앱 삭제로 직접 파기</li>
+  </ul>
+
+  <h2>6. 아동의 개인정보</h2>
+  <p>본 앱은 보호자가 아기의 이유식을 관리하는 서비스로, 아기 정보는 보호자의 관리 목적으로 처리됩니다. 만 14세 미만 아동 관련 정보는 법정대리인의 관리하에 처리됩니다.</p>
+
+  <h2>7. 안전성 확보 조치</h2>
+  <ul>
+    <li>전송 구간 암호화(HTTPS/TLS)</li>
+    <li>접근 권한 통제(Supabase RLS 등)</li>
+    <li>로컬 저장 기반 외부 전송 최소화</li>
+  </ul>
+
+  <h2>8. 개인정보 보호책임자 및 문의처</h2>
+  <table>
+    <tr><th>구분</th><th>내용</th></tr>
+    <tr><td>서비스명</td><td>이유미(iyumi)</td></tr>
+    <tr><td>사업자/운영자</td><td>이유미 (대표 김택림)</td></tr>
+    <tr><td>개인정보 보호책임자</td><td>김택림</td></tr>
+    <tr><td>문의 이메일</td><td><a href="mailto:team.coflanet@gmail.com">team.coflanet@gmail.com</a></td></tr>
+    <tr><td>주소</td><td>경기도 광명시 광이로 49 105동 602호</td></tr>
+  </table>
+  <p>개인정보 침해 상담: 개인정보침해신고센터(privacy.kisa.or.kr, 118), 경찰청 사이버수사국 등.</p>
+
+  <h2>9. 개정 이력</h2>
+  <ul><li>2026-06-15 최초 제정</li></ul>
+
+  <footer>© 이유미(iyumi) · <a href="../support/">고객지원</a> · <a href="../account-deletion/">계정·데이터 삭제</a></footer>
+</div>
+</body>
+</html>
