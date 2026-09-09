@@ -1,0 +1,15 @@
+{
+  "applinks": {
+    "details": [
+      {
+        "appIDs": ["TS8XLDWL47.com.iyumi.iyumi"],
+        "components": [
+          {
+            "/": "/iyumi/invite/*",
+            "comment": "Co-parenting invite links"
+          }
+        ]
+      }
+    ]
+  }
+}
