@@ -1,0 +1,12 @@
+[
+  {
+    "relation": ["delegate_permission/common.handle_all_urls"],
+    "target": {
+      "namespace": "android_app",
+      "package_name": "com.iyumi.iyumi",
+      "sha256_cert_fingerprints": [
+        "51:A1:94:F2:A3:37:3B:CD:A6:41:2F:6B:CD:E3:29:87:4E:F0:B8:58:A8:E4:A2:7A:8D:E1:69:EE:36:9A:D2:35"
+      ]
+    }
+  }
+]
