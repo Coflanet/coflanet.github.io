@@ -5,7 +5,8 @@
       "namespace": "android_app",
       "package_name": "com.iyumi.iyumi",
       "sha256_cert_fingerprints": [
-        "51:A1:94:F2:A3:37:3B:CD:A6:41:2F:6B:CD:E3:29:87:4E:F0:B8:58:A8:E4:A2:7A:8D:E1:69:EE:36:9A:D2:35"
+        "51:A1:94:F2:A3:37:3B:CD:A6:41:2F:6B:CD:E3:29:87:4E:F0:B8:58:A8:E4:A2:7A:8D:E1:69:EE:36:9A:D2:35",
+        "91:5D:00:4F:8E:E6:FF:28:96:11:66:60:A5:17:E7:D2:42:15:A3:FD:69:ED:1E:81:D9:87:D2:5A:A6:32:A6:DF"
       ]
     }
   }
