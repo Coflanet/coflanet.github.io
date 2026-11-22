@@ -1,11 +1,11 @@
 {
-    "name": "coflanet_admin",
-    "short_name": "coflanet_admin",
+    "name": "커플래닛 파트너",
+    "short_name": "커플래닛 파트너",
     "start_url": ".",
     "display": "standalone",
-    "background_color": "#0175C2",
-    "theme_color": "#0175C2",
-    "description": "A new Flutter project.",
+    "background_color": "#6541F2",
+    "theme_color": "#6541F2",
+    "description": "커플래닛 로스터 어드민",
     "orientation": "portrait-primary",
     "prefer_related_applications": false,
     "icons": [
