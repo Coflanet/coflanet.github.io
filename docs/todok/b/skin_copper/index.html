@@ -1,0 +1,66 @@
+<!doctype html>
+<html lang="ko">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>구리빛 보드 · 토독</title>
+<meta name="description" content="이 보드를 토독에서 받아 보세요">
+<meta property="og:type" content="website">
+<meta property="og:title" content="구리빛 보드 · 토독">
+<meta property="og:description" content="이 보드를 토독에서 받아 보세요">
+<meta property="og:image" content="https://coflanet.github.io/todok/b/skin_copper/board.png">
+<meta property="og:url" content="https://coflanet.github.io/todok/b/skin_copper/">
+<meta name="twitter:card" content="summary_large_image">
+<!-- 짓는 곳: tool/capture/board_link_pages_capture_test.dart (손으로 고치지 않는다) -->
+<style>
+:root{--paper:#F7F7F8;--card:#FFFFFF;--raised:#70737C14;--ink:#171719;--gray:#6B6E77;
+  --accent:#FF4F00;--on-accent:#FFFFFF}
+@media (prefers-color-scheme: dark){:root{--paper:#000000;--card:#262729;--raised:#5A5C63;--ink:#F7F7F8;--gray:#989BA2}}
+*{box-sizing:border-box}
+html,body{margin:0;background:var(--paper);color:var(--ink);
+  font-family:-apple-system,BlinkMacSystemFont,"Apple SD Gothic Neo","Malgun Gothic","Segoe UI",sans-serif;word-break:keep-all}
+.wrap{max-width:420px;margin:0 auto;padding:24px 16px 48px;display:flex;flex-direction:column}
+.mark{font-weight:800;font-size:26px;letter-spacing:-.02em}.mark b{color:var(--accent)}
+.t{padding:0 4px}
+h1{margin:24px 0 0;font-size:22px;line-height:1.35}
+.name{margin:4px 0 0;color:var(--gray);font-size:16px}
+.card{margin-top:24px;background:var(--card);border-radius:20px;padding:16px 16px 20px}
+.card img{display:block;width:100%;max-width:280px;margin:0 auto;height:auto}
+.sound{margin:24px 0 0;font-size:13px;color:var(--gray)}
+.btn{display:flex;align-items:center;justify-content:center;min-height:52px;border-radius:26px;font-size:16px;font-weight:700;
+  text-decoration:none;color:var(--ink);background:var(--raised)}
+.main{margin-top:24px;background:var(--accent);color:var(--on-accent)}
+.row{display:flex;gap:8px;margin-top:8px}.row .btn{flex:1}
+.note{margin:24px 0 0;font-size:13px;line-height:1.6;color:var(--gray)}
+</style>
+</head>
+<body>
+<div class="wrap">
+  <div class="mark t">todok<b>.</b></div>
+  <h1 class="t">이 보드를 토독에서 받아 보세요</h1>
+  <p class="name t" id="name">구리빛</p>
+  <div class="card">
+    <img src="board.png" alt="구리빛 보드" width="560" height="653">
+    <p class="sound t" id="sound" hidden></p>
+  </div>
+  <a class="btn main" id="open" href="todok:&#47;&#47;board?skin=skin_copper">토독 앱에서 열기</a>
+  <div class="row">
+    <a class="btn sub" href="https://apps.apple.com/app/id6826256062">App Store</a>
+    <a class="btn sub" href="https://play.google.com/store/apps/details?id=app.todok.todok">Google Play</a>
+  </div>
+  <p class="note t">토독을 설치한 뒤 이 링크를 한 번 더 눌러 주세요. 토독에서 이 보드가 바로 열려요.</p>
+</div>
+<script>
+(function(){
+  var N={"clicky":"클리키","clicky_lite":"클리키 라이트","tactile":"택타일","tactile_soft":"택타일 소프트","linear":"리니어","linear_heavy":"리니어 헤비","linear_soft":"스르륵","linear_heavy_soft":"쓰르륵","bubble":"보글","plate_alu":"알루미늄","plate_brass":"황동","plate_pc":"폴리카보네이트","foam_off":"폼 없음","foam_on":"폼 장착"};
+  var q=new URLSearchParams(location.search);
+  var sw=q.get('sw'),pl=q.get('pl'),fo=q.get('fo');
+  if(N[sw]){document.getElementById('name').textContent="구리빛"+' · '+N[sw];}
+  if(N[sw]&&N[pl]&&N[fo]){var s=document.getElementById('sound');s.textContent='소리 · '+N[sw]+' · '+N[pl]+' · '+N[fo];s.hidden=false;}
+  var a=new URLSearchParams();a.set('skin',"skin_copper");
+  ['sw','pl','fo','src'].forEach(function(k){var v=q.get(k);if(v&&/^[a-z0-9_-]{1,40}$/.test(v))a.set(k,v);});
+  document.getElementById('open').href='todok://board?'+a.toString();
+})();
+</script>
+</body>
+</html>
